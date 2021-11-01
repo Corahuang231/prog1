@@ -14,19 +14,25 @@ def main():
 	lst1 = []
 	lst2 = []
 	lst3 = []
-	f = Integer(5)
+	f = Integer(47)
 	print(f.fib())
-	for i in range(10,16):
+	for i in range(30,46):
 		tstart1 = time.perf_counter()
-		executor = ProcessPoolExecutor(max_workers=5)
-		executor.submit(fib_py, i)
+		f = Integer(i)
+		f.fib()
 		tstop1 = time.perf_counter()
 		a = tstop1-tstart1
 		lst1.append(i)
 		lst2.append(a)
+		tstart2 = time.perf_counter()
+		fib_py(i)
+		tstop2 = time.perf_counter()
+		b = tstop2-tstart2
+		lst3.append(b)
 	plt.plot(lst1, lst2,'bo')
-	plt.savefig('fibonacci_timing2')
-	plt.show()
+	plt.savefig('fibonacci_timingC++')
+	plt.plot(lst1, lst3, 'bo')
+	plt.savefig('fibonacci_timing_Pure python')
 
 if __name__ == '__main__':
 	main()
