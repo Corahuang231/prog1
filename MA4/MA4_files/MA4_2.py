@@ -14,6 +14,8 @@ def main():
 	lst1 = []
 	lst2 = []
 	lst3 = []
+	a = Integer(6)
+	print(a.fib())
 	f = Integer(47)
 	print(f.fib())
 	for i in range(30,46):
@@ -32,7 +34,7 @@ def main():
 	plt.plot(lst1, lst2,'bo')
 	plt.savefig('fibonacci_timingC++')
 	plt.plot(lst1, lst3, 'bo')
-	plt.savefig('fibonacci_timing_Pure python')
+	plt.savefig('fibonacci_timing_pure python')
 
 if __name__ == '__main__':
 	main()
